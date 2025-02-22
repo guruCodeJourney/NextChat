@@ -65,7 +65,7 @@ export const DEFAULT_CONFIG = {
 
   modelConfig: {
     model: "gpt-4o-mini" as ModelType,
-    providerName: "OpenAI" as ServiceProvider,
+    providerName: "Azure" as ServiceProvider,
     temperature: 0.5,
     top_p: 1,
     max_tokens: 4000,
