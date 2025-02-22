@@ -628,8 +628,8 @@ const en: LocaleType = {
     },
   },
   Store: {
-    DefaultTopic: "New Conversation",
-    BotHello: "Hello! How can I assist you today?",
+    DefaultTopic: "新对话",
+    BotHello: "你好啊! 有什么我可以帮助你的吗?",
     Error: "Something went wrong, please try again later.",
     Prompt: {
       History: (content: string) =>

@@ -21,6 +21,7 @@ import {
   Route,
   Routes,
   useLocation,
+  useNavigate
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
 import { useAppConfig } from "../store/config";
@@ -167,12 +168,21 @@ function Screen() {
   const isSdNew = location.pathname === Path.SdNew;
 
   const isMobileScreen = useMobileScreen();
+  const navigate = useNavigate();
   const shouldTightBorder =
     getClientConfig()?.isApp || (config.tightBorder && !isMobileScreen);
 
   useEffect(() => {
     loadAsyncGoogleFont();
   }, []);
+
+  useEffect(() => {
+    console.log(`home .. isMobileScreen ==== ${isMobileScreen}`)
+
+    if(isMobileScreen){
+      navigate(Path.Chat)
+    }
+  }, [isMobileScreen, navigate]);
 
   if (isArtifact) {
     return (
@@ -256,6 +266,7 @@ export function Home() {
       }
     };
     initMcp();
+
   }, []);
 
   if (!useHasHydrated()) {

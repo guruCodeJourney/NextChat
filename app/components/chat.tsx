@@ -650,13 +650,13 @@ export function ChatActions(props: {
           icon={<PromptIcon />}
         />
 
-        <ChatAction
+        {/* <ChatAction
           onClick={() => {
             navigate(Path.Masks);
           }}
           text={Locale.Chat.InputActions.Masks}
           icon={<MaskIcon />}
-        />
+        /> */}
 
         <ChatAction
           text={Locale.Chat.InputActions.Clear}
@@ -673,11 +673,11 @@ export function ChatActions(props: {
           }}
         />
 
-        <ChatAction
+        {/* <ChatAction
           onClick={() => setShowModelSelector(true)}
           text={currentModelName}
           icon={<RobotIcon />}
-        />
+        /> */}
 
         {showModelSelector && (
           <Selector
@@ -776,7 +776,7 @@ export function ChatActions(props: {
           />
         )}
 
-        {showStyleSelector && (
+        {/* {showStyleSelector && (
           <Selector
             defaultSelectedValue={currentStyle}
             items={dalle3Styles.map((m) => ({
@@ -793,9 +793,9 @@ export function ChatActions(props: {
               showToast(style);
             }}
           />
-        )}
+        )} */}
 
-        {showPlugins(currentProviderName, currentModel) && (
+        {/* {showPlugins(currentProviderName, currentModel) && (
           <ChatAction
             onClick={() => {
               if (pluginStore.getAll().length == 0) {
@@ -807,8 +807,8 @@ export function ChatActions(props: {
             text={Locale.Plugin.Name}
             icon={<PluginIcon />}
           />
-        )}
-        {showPluginSelector && (
+        )} */}
+        {/* {showPluginSelector && (
           <Selector
             multiple
             defaultSelectedValue={chatStore.currentSession().mask?.plugin}
@@ -823,7 +823,7 @@ export function ChatActions(props: {
               });
             }}
           />
-        )}
+        )} */}
 
         {!isMobileScreen && (
           <ChatAction
@@ -834,7 +834,7 @@ export function ChatActions(props: {
         )}
         {!isMobileScreen && <MCPAction />}
       </>
-      <div className={styles["chat-input-actions-end"]}>
+      {/* <div className={styles["chat-input-actions-end"]}>
         {config.realtimeConfig.enable && (
           <ChatAction
             onClick={() => props.setShowChatSidePanel(true)}
@@ -842,7 +842,7 @@ export function ChatActions(props: {
             icon={<HeadphoneIcon />}
           />
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
