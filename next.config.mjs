@@ -1,5 +1,4 @@
 import webpack from "webpack";
-import { PHASE_DEVELOPMENT_SERVER } from 'next/constants.js'
 
 const mode = process.env.BUILD_MODE ?? "standalone";
 console.log("[Next] build mode", mode);
@@ -10,7 +9,6 @@ console.log("[Next] build with chunk: ", !disableChunk);
 
 
 export default (phase) => {
-  const isDev = phase === PHASE_DEVELOPMENT_SERVER
 
   /** @type {import('next').NextConfig} */
   const nextConfig = {
@@ -39,7 +37,7 @@ export default (phase) => {
     experimental: {
       forceSwcTransforms: true,
     },
-    assetPrefix: isDev ? undefined : 'https://boswinner.oss-cn-shanghai.aliyuncs.com/azure-chat',
+    assetPrefix: 'https://boswinner.oss-cn-shanghai.aliyuncs.com/azure-chat',
     eslint: {
         ignoreDuringBuilds: true,
     },
