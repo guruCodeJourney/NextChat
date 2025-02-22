@@ -21,7 +21,7 @@ import {
   Route,
   Routes,
   useLocation,
-  useNavigate
+  useNavigate,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
 import { useAppConfig } from "../store/config";
@@ -177,12 +177,12 @@ function Screen() {
   }, []);
 
   useEffect(() => {
-    console.log(`home .. isMobileScreen ==== ${isMobileScreen}`)
+    console.log(`home .. isMobileScreen ==== ${isMobileScreen}`);
 
-    if(isMobileScreen){
-      navigate(Path.Chat)
+    if (isMobileScreen && isHome) {
+      navigate(Path.Chat);
     }
-  }, [isMobileScreen, navigate]);
+  }, []);
 
   if (isArtifact) {
     return (
@@ -266,7 +266,6 @@ export function Home() {
       }
     };
     initMcp();
-
   }, []);
 
   if (!useHasHydrated()) {
