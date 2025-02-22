@@ -491,4 +491,10 @@ If you want to add a new translation, read this [document](./docs/translation.md
 
 [MIT](https://opensource.org/license/mit/)
 
-## add sth to trigger deployment
+## 关于本地部署和vercel build的静态文件不一致，想自定义cdn的话
+可能需要手动覆盖以下文件
+```
+.next/static/chunks/app/layout-xxxxx.js
+.next/static/chunks/app/page-xxxxx.js
+.next/static/chunks/main-app-xxxxx.js
+```
