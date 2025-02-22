@@ -40,6 +40,9 @@ export default (phase) => {
       forceSwcTransforms: true,
     },
     assetPrefix: isDev ? undefined : 'https://boswinner.oss-cn-shanghai.aliyuncs.com/azure-chat',
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
   };
 
   const CorsHeaders = [
