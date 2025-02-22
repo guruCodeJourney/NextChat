@@ -1,10 +1,12 @@
 import webpack from "webpack";
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants'
 
 const mode = process.env.BUILD_MODE ?? "standalone";
 console.log("[Next] build mode", mode);
 
 const disableChunk = !!process.env.DISABLE_CHUNK || mode === "export";
 console.log("[Next] build with chunk: ", !disableChunk);
+const isDev = phase === PHASE_DEVELOPMENT_SERVER
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -33,6 +35,7 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
+  assetPrefix: isDev ? undefined : 'https://boswinner.oss-cn-shanghai.aliyuncs.com/azure-chat',
 };
 
 const CorsHeaders = [
