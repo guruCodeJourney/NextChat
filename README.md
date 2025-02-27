@@ -498,3 +498,6 @@ If you want to add a new translation, read this [document](./docs/translation.md
 .next/static/chunks/app/page-xxxxx.js
 .next/static/chunks/main-app-xxxxx.js
 ```
+
+## 部署域名
+https://azure.chatgpt-use.com/
